@@ -20,18 +20,28 @@ class HttpClient
     {
         try {
             $this->curl = new Curl();
-            $this->curl->setHeader('x-hotelkit-api-version', '2.2');
-            $this->curl->setHeader('x-hotelkit-api-nonce', $this->uuid());
 
-            //todo: change this to configuration file
-            $this->curl->setHeader('x-hotelkit-api-public-key', $this->publicKey());
-            $this->curl->setHeader('x-hotelkit-api-customer-key', $this->customerKey());
+            $this->curl->setHeaders([
+                'Content-Type' => 'application/json',
+                'Accept' => 'application/json',
+
+                'x-hotelkit-api-version' => '2.2',
+                'x-hotelkit-api-nonce' => $this->nonce(),
+
+                //todo: change this to configuration file
+                'x-hotelkit-api-public-key' => $this->publicKey(),
+                'x-hotelkit-api-customer-key' => $this->customerKey()
+            ]);
         } catch (\ErrorException $e) {
         }
     }
 
 
-    public function uuid()
+    /**
+     * Base64 uuid
+     * @return string
+     */
+    public function nonce()
     {
         /** @var array $alpha_numeric */
         $alpha_numeric = str_split('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
@@ -42,7 +52,7 @@ class HttpClient
             $result .= $alpha_numeric[array_rand($alpha_numeric)];
         }
 
-        return $result;
+        return base64_encode(time() . $result);
     }
 
 
