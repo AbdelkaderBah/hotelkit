@@ -25,6 +25,7 @@ class HttpClient
 
             //todo: change this to configuration file
             $this->curl->setHeader('x-hotelkit-api-public-key', $this->publicKey());
+            $this->curl->setHeader('x-hotelkit-api-customer-key', $this->customerKey());
         } catch (\ErrorException $e) {
         }
     }
@@ -48,6 +49,12 @@ class HttpClient
     private function publicKey()
     {
         return defined('hotelkit_public_key') ? constant('hotelkit_public_key') : '';
+    }
+
+
+    private function customerKey()
+    {
+        return defined('hotelkit_customer_key') ? constant('hotelkit_customer_key') : '';
     }
 
 
