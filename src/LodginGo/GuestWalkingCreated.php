@@ -12,7 +12,7 @@ namespace Hotelkit\LodginGo;
 use App\Services\Hotelkit\MessageImport;
 use Hotelkit\LodginGo\Actions\Accept;
 use Hotelkit\LodginGo\Actions\CounterOffer;
-use Hotelkit\LodginGo\Actions\Refuse;
+use Hotelkit\LodginGo\Actions\Ignore;
 use Hotelkit\Structures\Attributes\RequestAttachment;
 use Hotelkit\Structures\Collections\UserCollection;
 use Hotelkit\Structures\RequestStructure;
@@ -27,7 +27,7 @@ class GuestWalkingCreated
         $actions = [
             new Accept,
             new CounterOffer,
-            new Refuse
+            new Ignore
         ];
 
 

@@ -13,5 +13,8 @@ use Hotelkit\Structures\Attributes\RequestAction;
 
 class Accept extends RequestAction
 {
-
+    public function construct(array $action = [])
+    {
+        $this->type = 'guest_walking_accept_btn';
+    }
 }

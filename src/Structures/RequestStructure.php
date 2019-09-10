@@ -18,7 +18,7 @@ class RequestStructure
     private $referenceID;
     private $createrID;
 
-    /** @var UserCollection */
+    /** @var UserCollection|null */
     private $recipientList;
 
     private $title;
@@ -43,6 +43,78 @@ class RequestStructure
         $this->actions = $request['Actions'] ?? [];
         $this->link = $request['link'] ?? null;
         $this->attachements = $request['attachements'] ?? [];
+    }
+
+
+    /**
+     * @return string|null
+     */
+    public function getReferenceID(): string
+    {
+        return (string) $this->referenceID;
+    }
+
+
+    /**
+     * @return string|null
+     */
+    public function getCreaterID(): string
+    {
+        return (string) $this->createrID;
+    }
+
+
+    /**
+     * @return string|null
+     */
+    public function getTitle(): string
+    {
+        return (string) $this->title;
+    }
+
+
+    /**
+     * @return UserCollection|null
+     */
+    public function getRecipientList(): UserCollection
+    {
+        return $this->recipientList ?: new UserCollection([]);
+    }
+
+
+    /**
+     * @return boolean|null
+     */
+    public function getContent(): bool
+    {
+        return (bool)$this->content;
+    }
+
+
+    /**
+     * @return RequestAction[]
+     */
+    public function getActions(): array
+    {
+        return $this->actions;
+    }
+
+
+    /**
+     * @return string|null
+     */
+    public function getLink(): string
+    {
+        return (string) $this->link;
+    }
+
+
+    /**
+     * @return RequestAttachment[]
+     */
+    public function getAttachements(): array
+    {
+        return $this->attachements ?: [];
     }
 
 }

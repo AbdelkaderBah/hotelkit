@@ -13,22 +13,21 @@ use DateTime;
 
 class UserStructure
 {
-    //Attributes
+    /**
+     * Hotelkit user attributes
+     */
+
     private $hotelkitUserID;
     private $clientID;
     private $email;
     private $givenName;
     private $surName;
     private $loginName;
-    /** @var DateTime(dd.mm.YYYY) */
     private $birthDate;
     private $department;
     private $position;
-    /** @var array */
     private $customerList;
-    /** @var array */
     private $roles;
-    /** @var string("male", "female") */
     private $gender;
 
 
@@ -65,8 +64,9 @@ class UserStructure
     /**
      * Update User structure
      * @param array $updates
+     * @return void
      */
-    public function update(array $updates): void
+    public function update(array $updates)
     {
         foreach ($updates as $name => $value)
             $this->{$name} = $value;
@@ -148,6 +148,7 @@ class UserStructure
 
 
     /**
+     * (dd.mm.YYYY)
      * @return DateTime
      */
     public function getBirthDate(): DateTime

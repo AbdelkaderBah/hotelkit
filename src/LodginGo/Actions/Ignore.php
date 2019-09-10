@@ -11,6 +11,10 @@ namespace Hotelkit\LodginGo\Actions;
 
 use Hotelkit\Structures\Attributes\RequestAction;
 
-class Refuse  extends RequestAction
+class Ignore  extends RequestAction
 {
+    public function construct(array $action = [])
+    {
+        $this->type = 'guest_walking_ignore_btn';
+    }
 }

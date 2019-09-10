@@ -13,4 +13,8 @@ use Hotelkit\Structures\Attributes\RequestAction;
 
 class CounterOffer extends RequestAction
 {
+    public function construct(array $action = [])
+    {
+        $this->type = 'guest_walking_counter_offer_btn';
+    }
 }

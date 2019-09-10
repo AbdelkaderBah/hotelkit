@@ -11,11 +11,26 @@ namespace Hotelkit\Structures\Attributes;
 
 class RequestAction
 {
-    private $type;
-    private $label;
-    private $labelDone;
-    private $labelType;
-    private $isDone;
-    private $information;
-    private $required;
+    protected $type;
+    protected $label;
+    protected $labelDone;
+    protected $labelType;
+    protected $isDone;
+    protected $information;
+    protected $required;
+
+
+    /**
+     * @param array $action
+     */
+    public function construct(array $action = [])
+    {
+        $this->type = $action['type'] ?? null;
+        $this->label = $action['label'] ?? null;
+        $this->labelDone = $action['labelDone'] ?? null;
+        $this->labelType = $action['labelType'] ?? null;
+        $this->isDone = $action['isDone'] ?? null;
+        $this->information = $action['information'] ?? null;
+        $this->required = $action['required'] ?? null;
+    }
 }
