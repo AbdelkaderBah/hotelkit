@@ -1,3 +1,5 @@
+## LodginGo uses case for Hotelkit API (Conceptional)
+
 #Guest walking:
 
 - Created message:
