@@ -14,7 +14,7 @@ use Hotelkit\Structures\UserStructure;
 
 class HotelKit
 {
-    const BASE_URI = '';
+    const BASE_URI = 'https://api.hotelkit.net';
 
 
     /**

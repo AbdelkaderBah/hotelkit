@@ -21,8 +21,25 @@ class HttpClient
     {
         try {
             $this->curl = new Curl();
+            $this->curl->setHeader('x-hotelkit-api-version', '2.2');
+            $this->curl->setHeader('x-hotelkit-api-nonce', $this->uuid());
         } catch (\ErrorException $e) {
         }
+    }
+
+
+    public function uuid()
+    {
+        /** @var array $alpha_numeric */
+        $alpha_numeric = str_split('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+
+        $result = '';
+
+        for ($i = 0; $i < 16; $i++) {
+            $result .= $alpha_numeric[array_rand($alpha_numeric)];
+        }
+
+        return $result;
     }
 
 
@@ -39,6 +56,16 @@ class HttpClient
         return $response;
     }
 
+
+    /**
+     * Get format uri
+     * @param string $uri
+     * @return string
+     */
+    private function uri(string $uri): string
+    {
+        return sprintf('%s/%s', HotelKit::BASE_URI, ltrim($uri, '/'));
+    }
 
 
     /**
@@ -66,16 +93,5 @@ class HttpClient
         $response = $this->curl->post($this->uri($uri), $data);
 
         return $response;
-    }
-
-
-    /**
-     * Get format uri
-     * @param string $uri
-     * @return string
-     */
-    private function uri(string $uri): string
-    {
-        return sprintf('%s/%s', HotelKit::BASE_URI, ltrim($uri, '/'));
     }
 }
