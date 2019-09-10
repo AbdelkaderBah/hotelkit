@@ -37,16 +37,26 @@ class HotelKit
      * @param $unresolvedUser
      * List of user that could not be mached.
      * The key of each object is the hotelkitUserID of the referred user that was found in GET /users.
+     * @return void
+     */
+    public function updateUsers(UserCollection $resolvedUser, UserCollection $unresolvedUser)
+    {
+        (new HttpClient())->put('/users', [
+            'resolved' => $resolvedUser->get(),
+            'unresolved' => $unresolvedUser->get(),
+        ]);
+    }
+
+
+    /**
      * @param $newUser
      *    Array of users that are not present in GET /users and should be suggested to the business.
      * @return void
      */
-    public function pushUsers(array $resolvedUser, array $unresolvedUser, array $newUser): void
+    public function addUsers(UserCollection $newUser)
     {
         (new HttpClient())->put('/users', [
-            'resolved' => $resolvedUser,
-            'unresolved' => $unresolvedUser,
-            'new' => $newUser,
+            'new' => $newUser->get(),
         ]);
     }
 }
