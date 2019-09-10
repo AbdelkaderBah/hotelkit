@@ -9,12 +9,17 @@
 namespace Hotelkit\LodginGo;
 
 
-use Hotelkit\MessageImport;
+use App\Services\Hotelkit\MessageImport;
+use Hotelkit\LodginGo\Actions\Accept;
+use Hotelkit\LodginGo\Actions\CounterOffer;
+use Hotelkit\LodginGo\Actions\Refuse;
+use Hotelkit\LodginGo\Actions\ViewClients;
+use Hotelkit\LodginGo\Actions\ViewInvoice;
 use Hotelkit\Structures\Attributes\RequestAttachment;
 use Hotelkit\Structures\Collections\UserCollection;
 use Hotelkit\Structures\RequestStructure;
 
-class GuestWalkingMessage
+class GuestWalkingUpdated
 {
     public function create()
     {
@@ -22,9 +27,8 @@ class GuestWalkingMessage
          * Actions
          */
         $actions = [
-            new Accept,
-            new CounterOffer,
-            new Refuse
+            new ViewClients,
+            new ViewInvoice
         ];
 
 
@@ -48,6 +52,6 @@ class GuestWalkingMessage
         ]);
 
 
-        $importer->create('guest_walk_notification', $notification);
+        $importer->create('guest_walk_updated_notification', $notification);
     }
 }

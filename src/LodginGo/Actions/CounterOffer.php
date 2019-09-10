@@ -9,13 +9,8 @@
 namespace Hotelkit\LodginGo\Actions;
 
 
-class CounterOffer
-{
+use Hotelkit\Structures\Attributes\RequestAction;
 
-    /**
-     * CounterOfferAction constructor.
-     */
-    public function __construct()
-    {
-    }
+class CounterOffer extends RequestAction
+{
 }

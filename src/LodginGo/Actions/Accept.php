@@ -9,7 +9,9 @@
 namespace Hotelkit\LodginGo\Actions;
 
 
-class Accept
+use Hotelkit\Structures\Attributes\RequestAction;
+
+class Accept extends RequestAction
 {
 
 }
