@@ -6,12 +6,12 @@
  * Time: 04:51
  */
 
-namespace App\Services\Hotelkit\Structures;
+namespace Hotelkit\Structures;
 
 
-use App\Services\Hotelkit\Structures\Attributes\RequestAction;
-use App\Services\Hotelkit\Structures\Attributes\RequestAttachment;
-use App\Services\Hotelkit\Structures\Collections\UserCollection;
+use Hotelkit\Structures\Attributes\RequestAction;
+use Hotelkit\Structures\Attributes\RequestAttachment;
+use Hotelkit\Structures\Collections\UserCollection;
 
 class RequestStructure
 {
@@ -40,7 +40,7 @@ class RequestStructure
         $this->recipientList = $request['recipientList'] ?? null;
         $this->title = $request['title'] ?? null;
         $this->content = $request['content'] ?? null;
-        $this->actions = $request['actions'] ?? [];
+        $this->actions = $request['Actions'] ?? [];
         $this->link = $request['link'] ?? null;
         $this->attachements = $request['attachements'] ?? [];
     }

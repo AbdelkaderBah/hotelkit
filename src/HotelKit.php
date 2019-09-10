@@ -9,8 +9,8 @@
 namespace App\Services\Hotelkit;
 
 
-use App\Services\Hotelkit\Structures\Collections\UserCollection;
-use App\Services\Hotelkit\Structures\UserStructure;
+use Hotelkit\Structures\Collections\UserCollection;
+use Hotelkit\Structures\UserStructure;
 
 class HotelKit
 {

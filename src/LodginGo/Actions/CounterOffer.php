@@ -6,14 +6,14 @@
  * Time: 05:54
  */
 
-namespace App\Services\Hotelkit\LodginGo;
+namespace Hotelkit\LodginGo\Actions;
 
 
-class RefuseAction
+class CounterOffer
 {
 
     /**
-     * RefuseAction constructor.
+     * CounterOfferAction constructor.
      */
     public function __construct()
     {

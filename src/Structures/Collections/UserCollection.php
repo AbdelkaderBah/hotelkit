@@ -6,10 +6,10 @@
  * Time: 05:40
  */
 
-namespace App\Services\Hotelkit\Structures\Collections;
+namespace Hotelkit\Structures\Collections;
 
 
-use App\Services\Hotelkit\Structures\UserStructure;
+use Hotelkit\Structures\UserStructure;
 
 class UserCollection
 {

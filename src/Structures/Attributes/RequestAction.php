@@ -6,7 +6,7 @@
  * Time: 05:37
  */
 
-namespace App\Services\Hotelkit\Structures\Attributes;
+namespace Hotelkit\Structures\Attributes;
 
 
 class RequestAction

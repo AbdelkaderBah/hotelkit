@@ -9,7 +9,7 @@
 namespace App\Services\Hotelkit;
 
 
-use App\Services\Hotelkit\Structures\RequestStructure;
+use Hotelkit\Structures\RequestStructure;
 
 class MessageImport
 {
@@ -22,7 +22,7 @@ class MessageImport
             'type' => '',
             "labelForCustomer" => [],
             "content" => true,
-            "referenceID" => true, //necessary for actions
+            "referenceID" => true, //necessary for Actions
             "attachements" => false,
             "enabledByDefault" => true,
             "title" => true,

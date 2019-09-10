@@ -6,13 +6,13 @@
  * Time: 05:50
  */
 
-namespace App\Services\Hotelkit\LodginGo;
+namespace Hotelkit\LodginGo;
 
 
-use App\Services\Hotelkit\MessageImport;
-use App\Services\Hotelkit\Structures\Attributes\RequestAttachment;
-use App\Services\Hotelkit\Structures\Collections\UserCollection;
-use App\Services\Hotelkit\Structures\RequestStructure;
+use Hotelkit\MessageImport;
+use Hotelkit\Structures\Attributes\RequestAttachment;
+use Hotelkit\Structures\Collections\UserCollection;
+use Hotelkit\Structures\RequestStructure;
 
 class GuestWalkingMessage
 {
@@ -22,9 +22,9 @@ class GuestWalkingMessage
          * Actions
          */
         $actions = [
-            new AcceptAction,
-            new CounterOfferAction,
-            new RefuseAction
+            new Accept,
+            new CounterOffer,
+            new Refuse
         ];
 
 
@@ -40,7 +40,7 @@ class GuestWalkingMessage
             'recipientList' => new UserCollection([]),
             'title' => 'title',
             'content' => true,
-            'actions' => $actions,
+            'Actions' => $actions,
             'link' => 'uri',
             'attachements' => [
                 new RequestAttachment

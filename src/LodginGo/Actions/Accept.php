@@ -6,10 +6,10 @@
  * Time: 05:51
  */
 
-namespace App\Services\Hotelkit\LodginGo;
+namespace Hotelkit\LodginGo\Actions;
 
 
-class AcceptAction
+class Accept
 {
 
 }

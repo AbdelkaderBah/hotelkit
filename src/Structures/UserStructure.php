@@ -6,7 +6,7 @@
  * Time: 04:07
  */
 
-namespace App\Services\Hotelkit\Structures;
+namespace Hotelkit\Structures;
 
 
 use DateTime;
