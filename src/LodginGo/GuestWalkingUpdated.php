@@ -8,7 +8,7 @@
 namespace Hotelkit\LodginGo;
 
 
-use App\Services\Hotelkit\MessageImport;
+use HotelKit\MessageImport;
 use Hotelkit\LodginGo\Actions\ViewClients;
 use Hotelkit\LodginGo\Actions\ViewInvoice;
 use Hotelkit\Structures\Attributes\RequestAttachment;

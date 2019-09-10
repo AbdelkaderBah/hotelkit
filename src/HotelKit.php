@@ -5,7 +5,7 @@
  * Time: 04:04
  */
 
-namespace App\Services\Hotelkit;
+namespace Hotelkit;
 
 
 use Hotelkit\Structures\Collections\UserCollection;

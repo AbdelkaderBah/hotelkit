@@ -8,7 +8,7 @@
 namespace Hotelkit\LodginGo;
 
 
-use App\Services\Hotelkit\MessageImport;
+use HotelKit\MessageImport;
 use Hotelkit\LodginGo\Actions\AcceptButton;
 use Hotelkit\LodginGo\Actions\CounterOffer;
 use Hotelkit\LodginGo\Actions\IgnoreButton;

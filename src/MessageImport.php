@@ -5,7 +5,7 @@
  * Time: 04:42
  */
 
-namespace App\Services\Hotelkit;
+namespace HotelKit;
 
 
 use Hotelkit\Structures\RequestStructure;

@@ -5,7 +5,7 @@
  * Time: 04:16
  */
 
-namespace App\Services\Hotelkit;
+namespace HotelKit;
 
 
 use Curl\Curl;
@@ -22,6 +22,9 @@ class HttpClient
             $this->curl = new Curl();
             $this->curl->setHeader('x-hotelkit-api-version', '2.2');
             $this->curl->setHeader('x-hotelkit-api-nonce', $this->uuid());
+
+            //todo: change this to configuration file
+            $this->curl->setHeader('x-hotelkit-api-public-key', $this->publicKey());
         } catch (\ErrorException $e) {
         }
     }
@@ -39,6 +42,12 @@ class HttpClient
         }
 
         return $result;
+    }
+
+
+    private function publicKey()
+    {
+        return defined('hotelkit_public_key') ? constant('hotelkit_public_key') : '';
     }
 
 
