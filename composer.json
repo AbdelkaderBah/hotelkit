@@ -1,6 +1,7 @@
 {
   "name": "abdelkader-bah/hotelkit",
   "description": "Hotelkit Partner API - PHP",
+  "version": "0.1",
   "keywords": [
     "hotelkit",
     "api",
