@@ -11,7 +11,7 @@
            {sender} has made a guest walking request.
            You have the option to accept among the {rooms} available rooms
            
-           [Accept] [Counter offer] [Refuse] 
+           [Accept button] [Counter offer button] [Refuse button] 
 ``` 
 
 - Updated message:
@@ -22,5 +22,5 @@
   Content: Dear {receiver},
           {sender} has approved {rooms} rooms, Clients are being transported to your hotel
          
-         [Clients] [Invoice]
+         [Clients button] [Invoice  button]
 ```
