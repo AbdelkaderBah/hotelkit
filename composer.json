@@ -1,0 +1,29 @@
+{
+  "name": "abdelkader-bah/hotelkit",
+  "description": "Hotelkit Partner API - PHP",
+  "keywords": [
+    "hotelkit",
+    "api",
+    "php"
+  ],
+  "homepage": "https://www.hotelkit.net/api/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Abdelkader Mheiham",
+      "email": "jr.abdelkader@gmail.com",
+      "homepage": "https://twitter.com/abdelkader_mh",
+      "role": "Full stack web developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "ext-curl": "*",
+    "php-curl-class/php-curl-class": "^8.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "AbdelkaderBah\\Hotelkit\\": "src/"
+    }
+  }
+}
