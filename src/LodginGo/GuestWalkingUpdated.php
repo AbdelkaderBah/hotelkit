@@ -10,9 +10,9 @@ namespace Hotelkit\LodginGo;
 
 
 use App\Services\Hotelkit\MessageImport;
-use Hotelkit\LodginGo\Actions\Accept;
+use Hotelkit\LodginGo\Actions\AcceptButton;
 use Hotelkit\LodginGo\Actions\CounterOffer;
-use Hotelkit\LodginGo\Actions\Ignore;
+use Hotelkit\LodginGo\Actions\IgnoreButton;
 use Hotelkit\LodginGo\Actions\ViewClients;
 use Hotelkit\LodginGo\Actions\ViewInvoice;
 use Hotelkit\Structures\Attributes\RequestAttachment;

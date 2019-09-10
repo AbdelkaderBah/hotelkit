@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: apple
  * Date: 9/10/19
- * Time: 05:54
+ * Time: 05:51
  */
 
 namespace Hotelkit\LodginGo\Actions;
@@ -11,10 +11,10 @@ namespace Hotelkit\LodginGo\Actions;
 
 use Hotelkit\Structures\Attributes\RequestAction;
 
-class Ignore  extends RequestAction
+class AcceptButton extends RequestAction
 {
     public function construct(array $action = [])
     {
-        $this->type = 'guest_walking_ignore_btn';
+        $this->type = 'guest_walking_accept_btn';
     }
 }
