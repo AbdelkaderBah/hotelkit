@@ -5,7 +5,7 @@
  * Time: 04:42
  */
 
-namespace HotelKit;
+namespace Hotelkit;
 
 
 use Hotelkit\Structures\RequestStructure;
@@ -49,8 +49,8 @@ class MessageImport
      */
     public function create($type, RequestStructure $requestStructure)
     {
-        $endpoint = sprintf('requests?=%', $type);
+        $endpoint = sprintf('requests?type=%s', $type);
 
-        return (new HttpClient())->post($endpoint, $requestStructure);
+        return (new HttpClient())->post($endpoint, array_filter($requestStructure->toArray()));
     }
 }

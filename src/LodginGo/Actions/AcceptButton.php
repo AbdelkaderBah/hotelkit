@@ -12,8 +12,15 @@ use Hotelkit\Structures\Attributes\RequestAction;
 
 class AcceptButton extends RequestAction
 {
-    public function construct(array $action = [])
+    public function __construct()
     {
-        $this->type = 'guest_walking_accept_btn';
+        $this->create([
+            "type" => 'do',
+            "label" => "Accepter",
+            "labelDone" => "Acceptee",
+            "labelType" => "success",
+            "isDone" => true,
+        ]);
     }
+
 }

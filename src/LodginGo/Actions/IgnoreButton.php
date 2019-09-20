@@ -10,10 +10,16 @@ namespace Hotelkit\LodginGo\Actions;
 
 use Hotelkit\Structures\Attributes\RequestAction;
 
-class IgnoreButton  extends RequestAction
+class IgnoreButton extends RequestAction
 {
-    public function construct(array $action = [])
+    public function __construct()
     {
-        $this->type = 'guest_walking_ignore_btn';
+        $this->create([
+            "type" => "decline",
+            "label" => "Refuse",
+            "labelDone" => "Refused",
+            "labelType" => "error",
+            "isDone" => true
+        ]);
     }
 }

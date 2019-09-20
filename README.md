@@ -3,7 +3,7 @@
 # Hotelkit PHP API - 3rd Party
 Hotelkit Partner API - Experimental
 
-@todo: add demo users
-@todo: add tests (phpunit)
+- @todo: add demo users
+- @todo: add tests (phpunit)
 
 License‎: ‎MIT License

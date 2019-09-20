@@ -39,9 +39,24 @@ class RequestStructure
         $this->recipientList = $request['recipientList'] ?? null;
         $this->title = $request['title'] ?? null;
         $this->content = $request['content'] ?? null;
-        $this->actions = $request['Actions'] ?? [];
+        $this->actions = $request['actions'] ?? [];
         $this->link = $request['link'] ?? null;
         $this->attachements = $request['attachements'] ?? [];
+    }
+
+
+    public function toArray()
+    {
+        return [
+            'referenceID' => $this->referenceID,
+            'createrID' => $this->createrID,
+            'recipientList' => $this->recipientList,
+            'title' => $this->title,
+            'content' => $this->content,
+            'actions' => $this->actions,
+            'link' => $this->link,
+            'attachements' => $this->attachements,
+        ];
     }
 
 
@@ -50,7 +65,7 @@ class RequestStructure
      */
     public function getReferenceID(): string
     {
-        return (string) $this->referenceID;
+        return (string)$this->referenceID;
     }
 
 
@@ -59,7 +74,7 @@ class RequestStructure
      */
     public function getCreaterID(): string
     {
-        return (string) $this->createrID;
+        return (string)$this->createrID;
     }
 
 
@@ -68,7 +83,7 @@ class RequestStructure
      */
     public function getTitle(): string
     {
-        return (string) $this->title;
+        return (string)$this->title;
     }
 
 
@@ -104,7 +119,7 @@ class RequestStructure
      */
     public function getLink(): string
     {
-        return (string) $this->link;
+        return (string)$this->link;
     }
 
 

@@ -10,10 +10,23 @@ namespace Hotelkit\LodginGo\Actions;
 
 use Hotelkit\Structures\Attributes\RequestAction;
 
-class CounterOffer extends RequestAction
+class CounterOfferButton extends RequestAction
 {
-    public function construct(array $action = [])
+    public function __construct()
     {
-        $this->type = 'guest_walking_counter_offer_btn';
+        $this->create([
+            "type" => "counterOffer",
+            "label" => "Counter offer",
+            "labelDone" => "Counter offered",
+            "labelType" => "primary",
+            "isDone" => true,
+            "information" => [
+                "counterOffer" => [
+                    "required" => true,
+                    "type" => "string",
+                    "label" => "Counteroffer"
+                ]
+            ]
+        ]);
     }
 }

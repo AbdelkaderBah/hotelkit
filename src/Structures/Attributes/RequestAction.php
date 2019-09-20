@@ -19,10 +19,7 @@ class RequestAction
     protected $required;
 
 
-    /**
-     * @param array $action
-     */
-    public function construct(array $action = [])
+    public function create(array $action = [])
     {
         $this->type = $action['type'] ?? null;
         $this->label = $action['label'] ?? null;
@@ -31,5 +28,19 @@ class RequestAction
         $this->isDone = $action['isDone'] ?? null;
         $this->information = $action['information'] ?? null;
         $this->required = $action['required'] ?? null;
+    }
+
+
+    public function toArray()
+    {
+        return [
+            'type' => $this->type,
+            'label' => $this->label,
+            'labelDone' => $this->labelDone,
+            'labelType' => $this->labelType,
+            'isDone' => $this->isDone,
+            'information' => $this->information,
+            'required' => $this->required,
+        ];
     }
 }

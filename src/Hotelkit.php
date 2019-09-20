@@ -11,7 +11,7 @@ namespace Hotelkit;
 use Hotelkit\Structures\Collections\UserCollection;
 use Hotelkit\Structures\UserStructure;
 
-class HotelKit
+class Hotelkit
 {
     const BASE_URI = 'https://api.hotelkit.net';
 

@@ -8,12 +8,10 @@
 namespace Hotelkit\LodginGo;
 
 
-use HotelKit\MessageImport;
 use Hotelkit\LodginGo\Actions\AcceptButton;
-use Hotelkit\LodginGo\Actions\CounterOffer;
+use Hotelkit\LodginGo\Actions\CounterOfferButton;
 use Hotelkit\LodginGo\Actions\IgnoreButton;
-use Hotelkit\Structures\Attributes\RequestAttachment;
-use Hotelkit\Structures\Collections\UserCollection;
+use Hotelkit\MessageImport;
 use Hotelkit\Structures\RequestStructure;
 
 class GuestWalkingCreated
@@ -24,32 +22,34 @@ class GuestWalkingCreated
          * Actions
          */
         $actions = [
-            new AcceptButton,
-            new CounterOffer,
-            new IgnoreButton
+            (new AcceptButton)->toArray(),
+            (new CounterOfferButton)->toArray(),
+            (new IgnoreButton)->toArray()
         ];
-
 
         $importer = new MessageImport;
 
         /**
          * Notification
          */
-
         $notification = new RequestStructure([
-            'referenceID' => 'guest_walking_id',
-            'createrID' => 'creater_id',
-            'recipientList' => new UserCollection([]),
-            'title' => 'title',
-            'content' => true,
-            'Actions' => $actions,
+            'title' => '#D-420',
+            'content' => [
+                "Emetteur" => [
+                    "Nom" => "Hotel Alpha",
+                    "Adresse" => "01, Paris, France"
+                ],
+                "Guest" => [
+                    "Chambre" => "1"
+                ],
+                "Prix proposee" => "100$"
+            ],
+            'referenceID' => '#D-420',
+            'actions' => $actions,
             'link' => 'uri',
-            'attachements' => [
-                new RequestAttachment
-            ]
         ]);
 
 
-        $importer->create('guest_walk_created_notification', $notification);
+        return $importer->create('newOffer', $notification);
     }
 }
