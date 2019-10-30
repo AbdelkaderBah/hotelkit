@@ -26,7 +26,7 @@ class HttpClient
             $this->curl = new Curl();
 
             $this->curl->setHeaders([
-                'Content-Type' => 'application/json',
+                'Content-Type' => 'application/json; charset=utf-8',
                 'Accept' => 'application/json',
 
                 'x-hotelkit-api-version' => '2.2',
